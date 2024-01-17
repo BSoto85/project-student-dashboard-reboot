@@ -5,10 +5,9 @@ import "./index.css";
 import { BrowserRouter } from "react-router-dom";
 
 const Root = () => {
-<BrowserRouter>
-<App />
-</BrowserRouter>
-}
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>;
+};
 
- 
 ReactDOM.createRoot(document.getElementById("root")).render(<Root />);
