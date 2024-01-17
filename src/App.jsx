@@ -1,5 +1,5 @@
-import Aside from "./common/Aside";
-import Header from "./common/Header";
+import Aside from "./components/common/Aside";
+import Header from "./components/common/Header";
 import StudentList from "./components/StudentList";
 import { Routes, Route } from "react-router-dom";
 import Home from "./components/Home";
@@ -9,16 +9,15 @@ import StudentInfo from "./components/StudentInfo";
 function App() {
   return (
     <>
-      <div>Hello</div>
-      {/* <Routes>
+      <Routes>
         <Route path="/" element={<Home />}>
           {" "}
         </Route>
 
         <Route path="/about" element={<About />} />
 
-        <Route path="/studentinfo" element={<StudentInfo />} />
-      </Routes> */}
+        <Route path="/student-info" element={<StudentInfo />} />
+      </Routes>
     </>
   );
 }
