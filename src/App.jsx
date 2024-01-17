@@ -9,13 +9,11 @@ import StudentInfo from "./components/StudentInfo";
 function App() {
   return (
     <>
+      <Header />
+      <Aside />
       <Routes>
-        <Route path="/" element={<Home />}>
-          {" "}
-        </Route>
-
+        <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
-
         <Route path="/student-info" element={<StudentInfo />} />
       </Routes>
     </>
