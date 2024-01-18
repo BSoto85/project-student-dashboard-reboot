@@ -6,9 +6,15 @@ import CommentForm from "./CommentForm";
 const StudentInfo = () => {
   return (
     <div>
-      <StudentCard />
-      <ProgressList />
-      <CommentForm />
+      <section>
+        <StudentCard />
+      </section>
+      <section>
+        <ProgressList />
+      </section>
+      <section>
+        <CommentForm />
+      </section>
     </div>
   );
 };
