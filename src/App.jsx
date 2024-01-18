@@ -5,8 +5,20 @@ import { Routes, Route } from "react-router-dom";
 import Home from "./components/Home";
 import About from "./components/About";
 import StudentInfo from "./components/StudentInfo";
+import { useState } from "react";
+const URL = import.meta.env.VITE_BASE_API_URL;
 
 function App() {
+  const [students, setStudents] = useState([]);
+
+  const getAllStudents = () => {
+    return fetch(`${URL}/students`)
+      .then((res) => res.json())
+      .then((data) => setStudents(data));
+  };
+  getAllStudents();
+  console.log(students);
+
   return (
     <>
       <Header />
