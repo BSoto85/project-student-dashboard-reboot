@@ -9,13 +9,7 @@ import { useState, useEffect } from "react";
 const URL = import.meta.env.VITE_BASE_API_URL;
 
 function App() {
-  const [students, setStudents] = useState([]);
-
-  useEffect(() => {
-    fetch(`${URL}/students`)
-      .then((res) => res.json())
-      .then((data) => setStudents(data));
-  }, []);
+  
 
   return (
     <>
