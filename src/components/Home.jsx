@@ -1,7 +1,9 @@
 import React from "react";
+import StudentList from "./StudentList"
 
-const Home = () => {
-  return <div>Home</div>;
+
+const Home = ({ students }) => {
+  return <div><StudentList students={students}/></div>;
 };
 
 export default Home;

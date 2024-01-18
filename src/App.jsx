@@ -9,6 +9,7 @@ import { useState, useEffect } from "react";
 const URL = import.meta.env.VITE_BASE_API_URL;
 
 function App() {
+  
   const [students, setStudents] = useState([]);
 
   useEffect(() => {
@@ -20,9 +21,9 @@ function App() {
   return (
     <>
       <Header />
-      <Aside />
+      <Aside students={students}/>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home students={students}/>} />
         <Route path="/about" element={<About />} />
         <Route path="/student-info" element={<StudentInfo />} />
       </Routes>

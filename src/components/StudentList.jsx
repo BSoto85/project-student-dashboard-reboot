@@ -1,10 +1,16 @@
 import React from "react";
 import StudentCard from "./StudentCard";
+import { useState, useEffect } from "react";
+const URL = import.meta.env.VITE_BASE_API_URL;
 
-const StudentList = () => {
+const StudentList = ({ students }) => {
+  
   return (
     <div>
-      <StudentCard />
+      {students.map(student => {
+       return <StudentCard key={student.id}  student={student}/> 
+      }) }
+      
     </div>
   );
 };
