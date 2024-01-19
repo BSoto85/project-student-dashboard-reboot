@@ -6,16 +6,22 @@ const Aside = ({ students }) => {
   });
 
   const cohortList = [...new Set(fullCohortList)];
-  console.log(cohortList);
+
   return (
     <div>
       <h3>Choose a Class By Start Date</h3>
       <button>Sort {} By Year</button>
-      <section>
-        {/* {cohortList.map(cohort => {
-        const 
-      })} */}
-      </section>
+      <ul>
+        {cohortList.map((cohort) => {
+          const cohortSeason = cohort.slice(0, cohort.length - 4);
+          const cohortYear = cohort.slice(-4);
+          return (
+            <li key={cohort}>
+              {cohortSeason} {cohortYear}
+            </li>
+          );
+        })}
+      </ul>
     </div>
   );
 };
