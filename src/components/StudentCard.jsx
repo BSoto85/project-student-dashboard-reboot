@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 
 
@@ -26,7 +27,7 @@ const StudentCard = ({student}) => {
 console.log("Student Status:", studentStatus);
 
   return (
-  
+  <Link to={`/student-info`} className="text-decoration-none">
   <div className="d-flex justify-content-start">
     <div className="card border-danger text-bg-dark mb-3 " style={{ width: "540px", marginLeft: "20px" }}>
       <div className="row g-0 h-100">
@@ -39,13 +40,14 @@ console.log("Student Status:", studentStatus);
             <p className="card-text">Username: {username}</p>
             <p className="card-text">Birthday: {dob}</p>
              {studentStatus && (
-                <p><a href="#" class="link-warning link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">On track to Graduate</a></p>
+                <p className="text-primary">On track to Graduate</p>
                 )}
           </div>
         </div>
       </div>
     </div>
     </div>
+    </Link>
   );
 };
 
