@@ -5,6 +5,19 @@ const StudentCard = ({ student }) => {
   const { profilePhoto, names, username, dob } = student;
   const { preferredName, middleName, surname } = names;
 
+  const birthday = () => {
+    const dobNumbers = dob.split("/");
+    const year = dobNumbers.pop();
+    const yearMonthDay = dobNumbers.shift(year);
+    const date = new Date(Date.UTC(...yearMonthDay));
+    const formattedDob = date.toLocaleDateString("en", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    });
+    return formattedDob;
+  };
+
   const isOnTrack = (student) => {
     const { certifications, codewars } = student;
 
@@ -40,7 +53,7 @@ const StudentCard = ({ student }) => {
               <div className="card-body h-100">
                 <h5 className="card-title">{`${preferredName} ${middleName} ${surname}`}</h5>
                 <p className="card-text">Username: {username}</p>
-                <p className="card-text">Birthday: {dob}</p>
+                <p className="card-text">Birthday: {birthday()}</p>
                 {studentStatus && (
                   <p className="text-primary">On track to Graduate</p>
                 )}
