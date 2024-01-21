@@ -1,6 +1,6 @@
 import React from "react";
 
-const Aside = ({ students }) => {
+const Aside = ({ students, handleOnClick }) => {
   const fullCohortList = students.map((student) => {
     return student.cohort.cohortCode;
   });
@@ -15,9 +15,10 @@ const Aside = ({ students }) => {
         {cohortList.map((cohort) => {
           const cohortSeason = cohort.slice(0, cohort.length - 4);
           const cohortYear = cohort.slice(-4);
+          const formattedCohort = `${cohortSeason} ${cohortYear}`;
           return (
-            <li key={cohort}>
-              {cohortSeason} {cohortYear}
+            <li onClick={() => handleOnClick(cohort)} key={cohort}>
+              {formattedCohort}
             </li>
           );
         })}

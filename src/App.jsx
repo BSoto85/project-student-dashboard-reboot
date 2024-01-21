@@ -9,7 +9,6 @@ import { useState, useEffect } from "react";
 const URL = import.meta.env.VITE_BASE_API_URL;
 
 function App() {
-  
   const [students, setStudents] = useState([]);
 
   useEffect(() => {
@@ -18,12 +17,20 @@ function App() {
       .then((data) => setStudents(data));
   }, []);
 
+  const handleOnClick = (cohort) => {
+    const copiedStudents = students.filter(
+      (student) => student.cohort.cohortCode === cohort
+    );
+    setStudents(copiedStudents);
+  };
+  console.log(students);
+
   return (
     <>
       <Header />
-      <Aside students={students}/>
+      <Aside students={students} handleOnClick={handleOnClick} />
       <Routes>
-        <Route path="/" element={<Home students={students}/>} />
+        <Route path="/" element={<Home students={students} />} />
         <Route path="/about" element={<About />} />
         <Route path="/student-info" element={<StudentInfo />} />
       </Routes>
