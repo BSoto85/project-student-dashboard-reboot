@@ -10,7 +10,7 @@ const StudentCard = ({ student }) => {
     const year = dobNumbers.pop();
     const yearMonthDay = dobNumbers.shift(year);
     const date = new Date(Date.UTC(...yearMonthDay));
-    const formattedDob = date.toLocaleDateString("en", {
+    const formattedDob = date.toLocaleDateString("en-US", {
       year: "numeric",
       month: "long",
       day: "numeric",

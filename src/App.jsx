@@ -23,7 +23,6 @@ function App() {
     );
     setStudents(copiedStudents);
   };
-  console.log(students);
 
   return (
     <>
