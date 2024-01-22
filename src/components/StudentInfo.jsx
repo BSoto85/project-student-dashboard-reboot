@@ -3,17 +3,20 @@ import StudentCard from "./StudentCard";
 import ProgressList from "./ProgressList";
 import CommentForm from "./CommentForm";
 
-const StudentInfo = () => {
+const StudentInfo = ({ students }) => {
+  const { studentId } = useParams();
+  const student = students.find(s => s.id === studentId);
+
   return (
     <div>
       <section>
-        <StudentCard />
+        <StudentCard student={student} />
       </section>
       <section>
-        <ProgressList/>
+        <ProgressList student={student} />
       </section>
       <section>
-        <CommentForm />
+        <CommentForm student={student} />
       </section>
     </div>
   );
