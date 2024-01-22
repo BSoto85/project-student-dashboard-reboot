@@ -20,7 +20,6 @@ const StudentCard = ({ student }) => {
   };
 
   const studentStatus = isOnTrack(student);
-  console.log("Student Status:", studentStatus);
 
   return (
     <Link to={`/student-info`} className="text-decoration-none">
