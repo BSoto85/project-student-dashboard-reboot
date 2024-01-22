@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 const Aside = ({ students, handleOnClick }) => {
-  const [orderStatus, setOrderStatus] = useState(false);
+  const [orderStatus, setOrderStatus] = useState(true);
   const [sortOrder, setSortOrder] = useState("Descending");
   const [orderedList, setOrderedList] = useState([]);
   const [cohortList, setCohortList] = useState([]);
@@ -64,7 +64,7 @@ const Aside = ({ students, handleOnClick }) => {
           const formattedCohort = `${cohortSeason} ${cohortYear}`;
           return (
             <li
-              onClick={() => handleOnClick(cohort)}
+              onClick={() => handleOnClick(cohort, formattedCohort)}
               key={cohort}
               className="list-group-item list-group-item list-group-item-primary"
             >
