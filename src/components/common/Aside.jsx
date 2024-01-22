@@ -33,7 +33,7 @@ const Aside = ({ students, handleOnClick }) => {
   }, [students]);
 
   return (
-    <div>
+    <div className="float-end" style={{ width: "350px", marginRight: "20px"}}>
       <h3>Choose a Class By Start Date</h3>
       <button onClick={() => sort(cohortList)}>Sort {sortOrder} By Year</button>
       <ul>
@@ -42,7 +42,7 @@ const Aside = ({ students, handleOnClick }) => {
           const cohortYear = cohort.slice(-4);
           const formattedCohort = `${cohortSeason} ${cohortYear}`;
           return (
-            <li onClick={() => handleOnClick(cohort)} key={cohort}>
+            <li onClick={() => handleOnClick(cohort)} key={cohort} className="list-group-item list-group-item list-group-item-primary">
               {formattedCohort}
             </li>
           );
