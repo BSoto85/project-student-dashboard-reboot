@@ -37,7 +37,7 @@ const StudentCard = ({ student }) => {
   return (
 
   <Link to={`/student-info`} className="text-decoration-none">
-  <div className="d-flex justify-content-start">
+  <div className="d-flex justify-content-start mt-5 d-md-block" >
     <div className="card border-4 border-primary text-bg-dark mb-3 " style={{ width: "540px", marginLeft: "20px" }}>
       <div className="row g-0 h-100 ">
         <div className="col-md-4">
@@ -56,7 +56,6 @@ const StudentCard = ({ student }) => {
           </div>
         </div>
       </div>
-    </div>
     </Link>
   );
 };

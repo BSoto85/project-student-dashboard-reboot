@@ -33,7 +33,7 @@ const Aside = ({ students, handleOnClick }) => {
   }, [students]);
 
   return (
-    <div className="float-end" style={{ width: "350px", marginRight: "20px"}}>
+    <div className="float-end mt-5" style={{ width: "350px", marginRight: "20px"}}>
       <h3>Choose a Class By Start Date</h3>
       <button type="button" className="btn btn-success"onClick={() => sort(cohortList)}>Sort {sortOrder} By Year</button>
       <ul className="list-group">
