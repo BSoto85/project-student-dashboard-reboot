@@ -1,9 +1,12 @@
 import React from "react";
-import StudentList from "./StudentList"
+import StudentList from "./StudentList";
 
-
-const Home = ({ students }) => {
-  return <div><StudentList students={students}/></div>;
+const Home = ({ students, filteredStudents }) => {
+  return (
+    <div>
+      <StudentList students={students} filteredStudents={filteredStudents} />
+    </div>
+  );
 };
 
 export default Home;

@@ -1,32 +1,41 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-
-
-const StudentCard = ({student}) => {
+const StudentCard = ({ student }) => {
   const { profilePhoto, names, username, dob } = student;
   const { preferredName, middleName, surname } = names;
 
+  const birthday = () => {
+    const dobNumbers = dob.split("/");
+    const year = dobNumbers.pop();
+    const yearMonthDay = dobNumbers.shift(year);
+    const date = new Date(Date.UTC(...yearMonthDay));
+    const formattedDob = date.toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    });
+    return formattedDob;
+  };
 
   const isOnTrack = (student) => {
-
     const { certifications, codewars } = student;
 
-    const certificationsCompleted = 
-    certifications.resume &&
-    certifications.linkedin &&
-    certifications.github &&
-    certifications.mockInterview;
+    const certificationsCompleted =
+      certifications.resume &&
+      certifications.linkedin &&
+      certifications.github &&
+      certifications.mockInterview;
 
     const codeWarsScoreOver850 = codewars.current.total > 850;
 
     return certificationsCompleted && codeWarsScoreOver850;
   };
 
-  const studentStatus = isOnTrack(student)
-console.log("Student Status:", studentStatus);
+  const studentStatus = isOnTrack(student);
 
   return (
+
   <Link to={`/student-info`} className="text-decoration-none">
   <div className="d-flex justify-content-start">
     <div className="card border-primary text-bg-dark mb-3 " style={{ width: "540px", marginLeft: "20px" }}>
@@ -42,6 +51,8 @@ console.log("Student Status:", studentStatus);
              {studentStatus && (
                 <p className="text-primary">On track to Graduate</p>
                 )}
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -49,6 +60,5 @@ console.log("Student Status:", studentStatus);
     </Link>
   );
 };
-
 
 export default StudentCard;
