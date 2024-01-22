@@ -10,7 +10,7 @@ const StudentInfo = () => {
         <StudentCard />
       </section>
       <section>
-        <ProgressList />
+        <ProgressList/>
       </section>
       <section>
         <CommentForm />

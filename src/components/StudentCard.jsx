@@ -46,7 +46,6 @@ console.log("Student Status:", studentStatus);
         </div>
       </div>
     </div>
-    </div>
     </Link>
   );
 };
