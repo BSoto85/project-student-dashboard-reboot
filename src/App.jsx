@@ -40,7 +40,7 @@ function App() {
           }
         />
         <Route path="/about" element={<About />} />
-        <Route path="/student-info" element={<StudentInfo />} />
+        <Route path="/student-info" element={<StudentInfo students={students}/>} />
       </Routes>
    
     </>

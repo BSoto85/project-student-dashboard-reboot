@@ -3,17 +3,17 @@ import StudentCard from "./StudentCard";
 import ProgressList from "./ProgressList";
 import CommentForm from "./CommentForm";
 
-const StudentInfo = () => {
+const StudentInfo = ({ students }) => {
   return (
     <div>
       <section>
-        <StudentCard />
+        <StudentCard students={students} />
       </section>
       <section>
-        <ProgressList/>
+        <ProgressList students={students} />
       </section>
       <section>
-        <CommentForm />
+        <CommentForm students={students} />
       </section>
     </div>
   );
