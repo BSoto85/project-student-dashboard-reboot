@@ -1,35 +1,41 @@
-import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Aside = ({ students, handleOnClick }) => {
   const [orderStatus, setOrderStatus] = useState(false);
-  const [sortOrder, setSortOrder] = useState("Ascending");
+  const [sortOrder, setSortOrder] = useState("Descending");
   const [orderedList, setOrderedList] = useState([]);
+  const [cohortList, setCohortList] = useState([]);
 
-  const fullCohortList = students.map((student) => {
-    return student.cohort.cohortCode;
-  });
-
-  const cohortList = [...new Set(fullCohortList)];
-
-  const handleSort = () => {
+  const sort = (cohortList) => {
     if (orderStatus === true) {
-      setSortOrder("Ascending");
       const ascendingCohortList = cohortList.toSorted();
+      setSortOrder("Descending");
       setOrderedList(ascendingCohortList);
     } else {
+      console.log("else cohortlist", cohortList);
       const descendingCohortList = cohortList.toSorted().reverse();
-      setSortOrder("Descending");
+      setSortOrder("Ascending");
       setOrderedList(descendingCohortList);
     }
     setOrderStatus(!orderStatus);
     return sortOrder;
   };
 
+  useEffect(() => {
+    if (students.length > 0) {
+      const fullCohortList = students.map((student) => {
+        return student.cohort.cohortCode;
+      });
+      const uniqueCohorts = [...new Set(fullCohortList)];
+      sort(uniqueCohorts);
+      setCohortList(uniqueCohorts);
+    }
+  }, [students]);
+
   return (
     <div>
       <h3>Choose a Class By Start Date</h3>
-      <button onClick={handleSort}>Sort {sortOrder} By Year</button>
+      <button onClick={() => sort(cohortList)}>Sort {sortOrder} By Year</button>
       <ul>
         {orderedList.map((cohort) => {
           const cohortSeason = cohort.slice(0, cohort.length - 4);

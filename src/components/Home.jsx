@@ -1,10 +1,10 @@
 import React from "react";
 import StudentList from "./StudentList";
 
-const Home = ({ students, filteredSudents }) => {
+const Home = ({ students, filteredStudents }) => {
   return (
     <div>
-      <StudentList students={students} filteredSudents={filteredSudents} />
+      <StudentList students={students} filteredStudents={filteredStudents} />
     </div>
   );
 };
