@@ -7,6 +7,7 @@ import StudentInfo from "./components/StudentInfo";
 import { useState, useEffect } from "react";
 const URL = import.meta.env.VITE_BASE_API_URL;
 import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
 
 function App() {
   const [students, setStudents] = useState([]);
@@ -31,7 +32,7 @@ function App() {
   };
 
   return (
-    <>
+    <div className="background">
       <Header />
       <Aside students={students} handleOnClick={handleOnClick} />
       <Routes>
@@ -51,7 +52,7 @@ function App() {
           element={<StudentInfo students={students} />}
         />
       </Routes>
-    </>
+    </div>
   );
 }
 
