@@ -10,7 +10,7 @@ const Aside = ({ students }) => {
   return (
     <div className="float-end" style={{ width: "350px", marginRight: "20px"}}>
       <h3>Choose a Class By Start Date</h3>
-      <button>Sort {} By Year</button>
+      <button type="button" class="btn btn-success">Sort {} By Year</button>
       <ul className="list-group">
         {cohortList.map((cohort) => {
           const cohortSeason = cohort.slice(0, cohort.length - 4);
