@@ -23,7 +23,7 @@ const StudentCard = ({ student }) => {
   console.log("Student Status:", studentStatus);
 
   return (
-    <Link to={`/student-info`} className="text-decoration-none">
+    <Link to={`/student-info/${student.id}`} className="text-decoration-none">
       <div className="d-flex justify-content-start">
         <div
           className="card border-danger text-bg-dark mb-3 "

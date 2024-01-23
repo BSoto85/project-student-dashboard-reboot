@@ -1,12 +1,12 @@
-import Aside from "./components/common/Aside";
+import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/common/Header";
-import { Routes, Route } from "react-router-dom";
+import Aside from "./components/common/Aside";
 import Home from "./components/Home";
 import About from "./components/About";
 import StudentInfo from "./components/StudentInfo";
-import { useState, useEffect } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
 const URL = import.meta.env.VITE_BASE_API_URL;
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   const [students, setStudents] = useState([]);
@@ -40,9 +40,12 @@ function App() {
           }
         />
         <Route path="/about" element={<About />} />
-        <Route path="/student-info" element={<StudentInfo students={students}/>} />
+        <Route
+          path="/student-info/:studentId"
+          element={<StudentInfo students={students} />}
+        />
+        <Route path="*" element={<div>404 Not Found</div>} />
       </Routes>
-   
     </>
   );
 }
