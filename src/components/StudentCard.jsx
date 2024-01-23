@@ -32,7 +32,7 @@ const StudentCard = ({ student }) => {
 
   return (
 
-  <Link to={`/student-info`} className="text-decoration-none">
+  <Link to={`/student-info/${student.id}`} className="text-decoration-none">
   <div className="justify-content-start mt-5  d-md-block" >
     <div className="text-center card border-4 border-primary text-bg-dark mb-3 row align-items-start" style={{ width: "540px", marginLeft: "20px" }}>
       <div className="row  g-0  ">

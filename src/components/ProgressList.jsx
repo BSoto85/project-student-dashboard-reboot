@@ -6,7 +6,7 @@ const ProgressCard = ({ student }) => {
   const calculatePercentage = (current, goal) => {
     return Math.floor((current / goal) * 100);
   };
-
+  
   return (
     <div className="card mb-3">
       <div className="card-header bg-primary text-white">
