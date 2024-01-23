@@ -6,11 +6,13 @@ import About from "./components/About";
 import StudentInfo from "./components/StudentInfo";
 import { useState, useEffect } from "react";
 const URL = import.meta.env.VITE_BASE_API_URL;
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
 
 function App() {
   const [students, setStudents] = useState([]);
   const [filteredStudents, setFilteredStudents] = useState([]);
+  const [cohortHeading, setCohortHeading] = useState("All Students");
 
   useEffect(() => {
     fetch(`${URL}/students`)
@@ -21,29 +23,36 @@ function App() {
       });
   }, []);
 
-  const handleOnClick = (cohort) => {
+  const handleOnClick = (cohort, formattedCohort) => {
     const copiedStudents = students.filter(
       (student) => student.cohort.cohortCode === cohort
     );
     setFilteredStudents(copiedStudents);
+    setCohortHeading(formattedCohort);
   };
 
   return (
-    <>
+    <div className="background">
       <Header />
       <Aside students={students} handleOnClick={handleOnClick} />
       <Routes>
         <Route
           path="/"
           element={
-            <Home students={students} filteredStudents={filteredStudents} />
+            <Home
+              students={students}
+              filteredStudents={filteredStudents}
+              cohortHeading={cohortHeading}
+            />
           }
         />
         <Route path="/about" element={<About />} />
-        <Route path="/student-info" element={<StudentInfo />} />
+        <Route
+          path="/student-info"
+          element={<StudentInfo students={students} />}
+        />
       </Routes>
-   
-    </>
+    </div>
   );
 }
 

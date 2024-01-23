@@ -1,9 +1,12 @@
 import React from "react";
 import StudentList from "./StudentList";
+import { useState } from "react";
 
-const Home = ({ students, filteredStudents }) => {
+const Home = ({ students, filteredStudents, cohortHeading }) => {
   return (
     <div>
+      <h2>{cohortHeading}</h2>
+      <h3>Total Students: {filteredStudents.length}</h3>
       <StudentList students={students} filteredStudents={filteredStudents} />
     </div>
   );
