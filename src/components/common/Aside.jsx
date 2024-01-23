@@ -69,7 +69,7 @@ const Aside = ({ students, handleOnClick }) => {
           return (
             <Link to="/">
               <li
-                onClick={() => handleOnClick(cohort)}
+                onClick={() => handleOnClick(cohort, formattedCohort)}
                 key={cohort}
                 className=" expand-lg list-group-item list-group-item list-group-item-primary"
               >

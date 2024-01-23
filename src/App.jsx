@@ -33,7 +33,11 @@ function App() {
 
   return (
     <div className="background">
-      <Header setFilteredStudents={setFilteredStudents} students={students} />
+      <Header
+        setFilteredStudents={setFilteredStudents}
+        students={students}
+        setCohortHeading={setCohortHeading}
+      />
       <Aside students={students} handleOnClick={handleOnClick} />
       <Routes>
         <Route
