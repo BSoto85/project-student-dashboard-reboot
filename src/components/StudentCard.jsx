@@ -37,13 +37,14 @@ const StudentCard = ({ student }) => {
   return (
 
   <Link to={`/student-info`} className="text-decoration-none">
-  <div className="d-flex justify-content-start mt-5 d-md-block" >
-    <div className="card border-4 border-primary text-bg-dark mb-3 " style={{ width: "540px", marginLeft: "20px" }}>
-      <div className="row g-0 h-100 ">
-        <div className="col-md-4">
+    
+  <div className="justify-content-start mt-5  d-md-block" >
+    <div className="text-center card border-4 border-primary text-bg-dark mb-3 row align-items-start" style={{ width: "540px", marginLeft: "20px" }}>
+      <div className="row  g-0  ">
+        <div className="col col-md-4">
           <img src={profilePhoto} className="img-fluid rounded-start h-100 w-100" alt={`${preferredName} ${surname}`} />
         </div>
-        <div className="col-md-8">
+        <div className="col col-md-8">
           <div className="card-body h-100">
             <h5 className="card-title">{`${preferredName} ${middleName} ${surname}`}</h5>
             <p className="card-text">Username: {username}</p>
