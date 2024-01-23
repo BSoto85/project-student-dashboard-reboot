@@ -25,6 +25,7 @@ The **Student Dashboard App** was created using React. With this App, web develo
 
 - The `Home` page loads all students in the program.
 - Click a `cohort` to see students from that cohort and get a student count.
+- Click on the `Sort` botton to sort cohorts ascending or descending by year and season.
 - Click on a `student card` to see more details about a particular student.
 - Create a note for an individual student in the `1:1 Notes` form. Once submitted, the note is added below the form.
 - Click on the `About the Devs` link to learn more about the developers of the **Student Dashboard App**.
