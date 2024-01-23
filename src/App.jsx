@@ -9,7 +9,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 const URL = import.meta.env.VITE_BASE_API_URL;
 import "./App.css";
 
-
 function App() {
   const [students, setStudents] = useState([]);
   const [filteredStudents, setFilteredStudents] = useState([]);
@@ -34,7 +33,7 @@ function App() {
 
   return (
     <div className="background">
-      <Header />
+      <Header setFilteredStudents={setFilteredStudents} students={students} />
       <Aside students={students} handleOnClick={handleOnClick} />
       <Routes>
         <Route
@@ -54,7 +53,7 @@ function App() {
         />
         <Route path="*" element={<div>404 Not Found</div>} />
       </Routes>
-    </>
+    </div>
   );
 }
 
