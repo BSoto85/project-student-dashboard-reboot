@@ -9,7 +9,7 @@ const Aside = ({ students, handleOnClick }) => {
 
   const sort = (cohortList) => {
     const yearInFront = cohortList.map((cohort) => {
-      const cohortSeason = cohort.slice(0, cohort.length - 4);
+      const cohortSeason = cohort.slice(0, -4);
       const cohortYear = cohort.slice(-4);
       return cohortYear + cohortSeason;
     });
@@ -63,7 +63,7 @@ const Aside = ({ students, handleOnClick }) => {
       </button>
       <ul className="list-group">
         {orderedList.map((cohort) => {
-          const cohortSeason = cohort.slice(0, cohort.length - 4);
+          const cohortSeason = cohort.slice(0, -4);
           const cohortYear = cohort.slice(-4);
           const formattedCohort = `${cohortSeason} ${cohortYear}`;
           return (

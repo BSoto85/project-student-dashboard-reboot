@@ -1,9 +1,7 @@
 import React from "react";
 import StudentCard from "./StudentCard";
-// import { useState, useEffect } from "react";
-// const URL = import.meta.env.VITE_BASE_API_URL;
 
-const StudentList = ({ students, filteredStudents }) => {
+const StudentList = ({ filteredStudents }) => {
   return (
     <div>
       {filteredStudents.map((student) => {

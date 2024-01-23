@@ -1,6 +1,5 @@
 import React from "react";
 import StudentList from "./StudentList";
-import { useState } from "react";
 
 const Home = ({ students, filteredStudents, cohortHeading }) => {
   return (

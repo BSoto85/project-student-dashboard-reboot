@@ -7,10 +7,12 @@ The **Student Dashboard App** was created using React. With this App, web develo
 ## Initial Setup
 
 1. **Fork the Repo**: Create a copy of this project's repository in your GitHub account.
-2. **Clone the Fork**: Download your forked repository to your computer.
-3. **Navigate to Directory**: Use command line to `cd` into the project folder.
-4. **Install Dependencies**: Run `npm install` to set up project dependencies.
-5. **Start Development Server**: Use `npm run dev` to launch the development environment.
+1. **Clone the Fork**: Download your forked repository to your computer.
+1. **Navigate to Directory**: Use command line to `cd` into the project folder.
+1. **Install Dependencies**: Run `npm install` to set up project dependencies.
+1. **Start Development Server**: Use `npm run dev` to launch the development environment.
+1. **Fork and clone** the [server](https://github.com/BSoto85/project-student-dashboard-reboot-server). Run `npm install` and use `npm run dev` on a different terminal to launch the backend.
+1. Keep both terminals open to run the app.
 
 ## User Stories and Features
 

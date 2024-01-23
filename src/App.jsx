@@ -7,7 +7,7 @@ import About from "./components/About";
 import StudentInfo from "./components/StudentInfo";
 import "bootstrap/dist/css/bootstrap.min.css";
 const URL = import.meta.env.VITE_BASE_API_URL;
-import "./App.css";
+import "./index.css";
 
 function App() {
   const [students, setStudents] = useState([]);
