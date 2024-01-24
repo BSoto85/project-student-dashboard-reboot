@@ -49,14 +49,16 @@ const Aside = ({ students, handleOnClick }) => {
 
   return (
 
-    <div className=" float-end mt-5 mb-5" style={{ width: "350px", marginRight: "20px"}}>
+    <div className=" container  float-end mt-5 mb-5" style={{ width: "350px", marginRight: "30px"}}>
       <h3>Choose a Class By Start Date</h3>
-      <button type="button" className="btn btn-primary"onClick={() => sort(cohortList)}>Sort {sortOrder} By Year</button>
-      <ul className="list-group">
+      <button type="button" className="btn btn-primary mb-3"onClick={() => sort(cohortList)}>Sort {sortOrder} By Year</button>
+      
+      <ul className="list-group mt-4">
         {orderedList.map((cohort) => {
           const cohortSeason = cohort.slice(0, cohort.length - 4);
           const cohortYear = cohort.slice(-4);
           const formattedCohort = `${cohortSeason} ${cohortYear}`;
+          
           return (
             <li onClick={() => handleOnClick(cohort)} key={cohort} className=" expand-lg list-group-item list-group-item list-group-item-primary">
               {formattedCohort}
