@@ -33,7 +33,7 @@ function App() {
   return (
     <>
       <div className="background">
-        <Header />
+        <Header setFilteredStudents={setFilteredStudents} students={students} />
         <div className="container-fluid">
           <div className="row">
             <div className="col-8">
