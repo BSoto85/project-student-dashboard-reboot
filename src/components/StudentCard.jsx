@@ -31,6 +31,7 @@ const StudentCard = ({ student }) => {
   const studentStatus = isOnTrack(student);
 
   return (
+
     <Link to={`/student-info/${student.id}`} className="text-decoration-none">
       <div className="justify-content-start mt-5  d-md-block">
         <div
