@@ -14,15 +14,23 @@ const StudentInfo = ({ students }) => {
 
   return (
     <div>
-      <section>
-        <StudentCard student={student} />
-      </section>
-      <section>
-        <ProgressList student={student} />
-      </section>
-      <section>
-        <CommentForm student={student} />
-      </section>
+      <div className="container-fluid studentBG col-12">
+        <section>
+          <StudentCard student={student} />
+        </section>
+        <div className="container-fluid">
+          <section className="row">
+            <section className="col-md-6">
+              <ProgressList student={student} />
+            </section>
+            <section className="col-md-6">
+              <div style={{ height: "640px" }}>
+                <CommentForm />
+              </div>
+            </section>
+          </section>
+        </div>
+      </div>
     </div>
   );
 };
