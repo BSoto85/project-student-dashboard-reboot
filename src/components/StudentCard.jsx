@@ -31,7 +31,6 @@ const StudentCard = ({ student }) => {
   const studentStatus = isOnTrack(student);
 
   return (
-
     <Link to={`/student-info/${student.id}`} className="text-decoration-none">
       <div className="justify-content-start mt-5  d-md-block">
         <div
@@ -50,7 +49,7 @@ const StudentCard = ({ student }) => {
               <div className="card-body h-100">
                 <h5 className="card-title">{`${preferredName} ${middleName} ${surname}`}</h5>
                 <p className="card-text">Username: {username}</p>
-                <p className="card-text">Birthday: {dob}</p>
+                <p className="card-text">Birthday: {birthdayFormatting(dob)}</p>
                 {studentStatus && (
                   <p className="text-primary">On track to Graduate</p>
                 )}
