@@ -9,7 +9,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 const URL = import.meta.env.VITE_BASE_API_URL;
 import "./App.css";
 
-
 function App() {
   const [students, setStudents] = useState([]);
   const [filteredStudents, setFilteredStudents] = useState([]);
@@ -31,30 +30,39 @@ function App() {
     setFilteredStudents(copiedStudents);
     setCohortHeading(formattedCohort);
   };
-
   return (
-    <div className="background">
-      <Header />
-      <Aside students={students} handleOnClick={handleOnClick} />
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <Home
-              students={students}
-              filteredStudents={filteredStudents}
-              cohortHeading={cohortHeading}
-            />
-          }
-        />
-        <Route path="/about" element={<About />} />
-        <Route
-          path="/student-info/:studentId"
-          element={<StudentInfo students={students} />}
-        />
-        <Route path="*" element={<div>404 Not Found</div>} />
-      </Routes>
-    </div>
+    <>
+      <div className="background">
+        <Header />
+        <div className="container-fluid">
+          <div className="row">
+            <div className="col-8">
+              <Routes>
+                <Route
+                  path="/"
+                  element={
+                    <Home
+                      students={students}
+                      filteredStudents={filteredStudents}
+                      cohortHeading={cohortHeading}
+                    />
+                  }
+                />
+                <Route path="/about" element={<About />} />
+                <Route
+                  path="/student-info/:studentId"
+                  element={<StudentInfo students={students} />}
+                />
+                <Route path="*" element={<div>404 Not Found</div>} />
+              </Routes>
+            </div>
+            <div className="col-4">
+              <Aside students={students} handleOnClick={handleOnClick} />
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
   );
 }
 

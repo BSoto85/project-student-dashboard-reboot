@@ -32,21 +32,27 @@ const StudentCard = ({ student }) => {
 
   return (
 
-  <Link to={`/student-info/${student.id}`} className=" col text-decoration-none">
-   
-  <div className="justify-content-start  mt-2  " >
-    <div className=" card border-4 border-primary text-bg-dark  align-items-start" style={{ width: "520px"}}>
-      <div className="row    ">
-        <div className="col">
-          <img src={profilePhoto} className="img-fluid rounded-start h-100 w-100" alt={`${preferredName} ${surname}`} />
-        </div>
-        <div className="col col-md-8">
-          <div className="card-body h-80">
-            <h5 className="card-title">{`${preferredName} ${middleName} ${surname}`}</h5>
-            <p className="card-text">Email: {username}</p>
-            <p className="card-text">Birthday: {dob}</p>
-             {studentStatus && (
-                <p className="text-primary">On track to Graduate</p>
+    <Link to={`/student-info/${student.id}`} className="text-decoration-none">
+      <div className="justify-content-start mt-5  d-md-block">
+        <div
+          className="text-center card border-4 border-primary text-bg-dark mb-3 row align-items-start"
+          style={{ width: "90%", marginLeft: "auto", marginRight: "auto" }}
+        >
+          <div className="row  g-0  ">
+            <div className="col col-md-4">
+              <img
+                src={profilePhoto}
+                className="img-fluid rounded-start h-100 w-100"
+                alt={`${preferredName} ${surname}`}
+              />
+            </div>
+            <div className="col col-md-8">
+              <div className="card-body h-100">
+                <h5 className="card-title">{`${preferredName} ${middleName} ${surname}`}</h5>
+                <p className="card-text">Username: {username}</p>
+                <p className="card-text">Birthday: {dob}</p>
+                {studentStatus && (
+                  <p className="text-primary">On track to Graduate</p>
                 )}
               </div>
             </div>
