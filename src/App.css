@@ -5,9 +5,23 @@
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-}
+} 
 
 * {
   font-family: monospace !important;
 }
 
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700; /* Bold for headings */
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+p {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400; /* Regular weight for readability */
+}

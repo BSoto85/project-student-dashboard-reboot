@@ -23,20 +23,9 @@ const CommentForm = () => {
   };
 
   useEffect(() => {
-    const storedComments = localStorage.getItem("comments");
-    if (storedComments) {
-      setComments(JSON.parse(storedComments));
-    }
-
-    window.addEventListener("beforeunload", () => {
-      localStorage.removeItem("comments");
-    });
-
-    return () => {
-      window.removeEventListener("beforeunload", () => {
-        localStorage.removeItem("comments");
-      });
-    };
+    // Clear comments from state and localStorage when the component mounts
+    setComments([]);
+    localStorage.removeItem("comments");
   }, []);
 
   return (
